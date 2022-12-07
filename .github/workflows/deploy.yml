@@ -28,7 +28,7 @@ jobs:
       - name: Echo PORT
         run: echo http://127.0.0.1:$PORT
       - name: Run server
-        run: npm run start
+        run: npm run start & npx wait-on http://127.0.0.1:$PORT
       - name: Run tests
         run: npm run test
       - name: Output information
