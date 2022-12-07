@@ -6,9 +6,10 @@ const dbPassword = process.env.MONGODB_PASSWORD;
 const dbName = process.env.MONGODB_DB_NAME;
 
 const uri = `mongodb+srv://${dbUser}:${dbPassword}@${clusterAddress}/?retryWrites=true&w=majority`;
+// 'mongodb+srv://olly123:<password>@abuwebsite.e2oko.mongodb.net/?retryWrites=true&w=majority'
 const client = new MongoClient(uri);
-
 console.log('Trying to connect to db');
+console.log(uri);
 
 try {
   await client.connect();
